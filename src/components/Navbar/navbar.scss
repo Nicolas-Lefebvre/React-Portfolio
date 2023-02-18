@@ -1,0 +1,18 @@
+nav {
+  /* margin-bottom: 3rem !important; */
+  background-color: #436886 !important;
+  color: white !important;
+  /* display: block; */
+}
+
+nav a {
+  color: white !important;
+
+}
+
+.sticky-top-navbar {
+  z-index: 10000;
+  position: fixed !important;
+  top: 0px;
+  width: 100%;
+}
