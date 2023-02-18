@@ -1,14 +1,19 @@
 // == Import
 import './styles.scss';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import Header from '../Header';
 import Navbar from '../Navbar';
 import Projets from '../Projets';
 
+// import ProjectList from '../../Data/ProjectList';
+
 // == Composant
 function App() {
+  const [projectLayout, setProjectLayout] = useState('all');
+  const [highlithedProject, setHighlithedProject] = useState([]);
+
   // ------------------ECOUTEUR SUR LE SCROLL POUR RENDRE LA NAVBAR STICKY--------------------------
   useEffect(() => {
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
@@ -42,7 +47,12 @@ function App() {
     >
       <Header />
       <Navbar />
-      <Projets />
+      <Projets
+        projectLayout={projectLayout}
+        setProjectLayout={setProjectLayout}
+        highlithedProject={highlithedProject}
+        setHighlithedProject={setHighlithedProject}
+      />
       <div>Projets</div>
       <div>Presentation / contact</div>
       <h1>Composant : App</h1>

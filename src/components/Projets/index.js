@@ -2,9 +2,16 @@
 // == Import
 import './projets.scss';
 import ProjectList from '../../Data/ProjectList';
+import Project from './Project';
+import ProjectDetail from './ProjectDetail';
 
 // == Composant
-function Projets() {
+function Projets({
+  setProjectLayout,
+  projectLayout,
+  highlithedProject,
+  setHighlithedProject,
+}) {
   return (
     <section className="projets">
 
@@ -24,21 +31,34 @@ function Projets() {
             </li>
           </ul>
         </div> */}
+        {
+          projectLayout === 'all'
+            ? (
+              <div className="project-container-body card-body">
+                {
+                  ProjectList.map((project, index) => (
 
-        <div className="project-container-body card-body">
-          {
-            ProjectList.map((project) => (
+                    <Project
+                      image={project.image}
+                      onClick={() => {
+                        console.log('Clic sur projet');
+                        setHighlithedProject(ProjectList[index]);
+                        setProjectLayout('detailed');
+                      }}
+                    />
 
-              <div className="project-card card" style={{ width: '18rem' }}>
-                <img src={project.image} className="card-img-top" alt="..." />
-                {/* <div className="card-body">
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div> */}
+                  ))
+                }
               </div>
-
-            ))
-          }
-        </div>
+            )
+            : (
+              <ProjectDetail
+                image={highlithedProject.image}
+                name={highlithedProject.name}
+                description={highlithedProject.description}
+              />
+            )
+        }
 
       </div>
 

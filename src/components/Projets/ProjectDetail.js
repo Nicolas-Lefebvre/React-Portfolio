@@ -1,0 +1,19 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable max-len */
+// == Import
+
+// == Composant
+function ProjectDetail({ image, name, description }) {
+  return (
+    <div className="project-detail card" style={{ width: '18rem' }}>
+      <img src={image} className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h4>NOM PROJET: {name}</h4>
+        <p className="card-text">{description}</p>
+      </div>
+    </div>
+  );
+}
+
+// == Export
+export default ProjectDetail;
