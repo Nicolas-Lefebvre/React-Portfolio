@@ -1,5 +1,7 @@
+/* eslint-disable max-len */
 // == Import
 import './projets.scss';
+import ProjectList from '../../Data/ProjectList';
 
 // == Composant
 function Projets() {
@@ -8,7 +10,7 @@ function Projets() {
 
       <h2>Projets</h2>
 
-      <div className="card text-center col-8">
+      <div className="project-container card text-center col-12 col-sm-10 col-lg-8">
         <div className="card-header">
           <ul className="nav nav-tabs card-header-tabs">
             <li className="nav-item">
@@ -22,11 +24,22 @@ function Projets() {
             </li>
           </ul>
         </div>
-        <div className="card-body">
-          <h5 className="card-title">Special title treatment</h5>
-          <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" className="btn btn-primary">Go somewhere</a>
+
+        <div className="project-container-body card-body">
+          {
+            ProjectList.map((project) => (
+
+              <div className="project-card card" style={{ width: '18rem' }}>
+                <img src={project.image} className="card-img-top" alt="..." />
+                {/* <div className="card-body">
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div> */}
+              </div>
+
+            ))
+          }
         </div>
+
       </div>
 
     </section>
