@@ -6,19 +6,20 @@
   margin: 2rem auto;
 
   .project-container {
-    height: 700px;
+    height: fit-content;
+    border: none;
 
     .project-container-body {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-start;
+      justify-content: center;
 
 
     }
   }
   .project-card {
-    height: 50%;
-    width: 25% !important;
+    height: 340px;
+    width: 265px !important;
     margin: 1rem 1rem;
 
     img {

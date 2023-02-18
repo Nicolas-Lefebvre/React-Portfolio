@@ -11,7 +11,7 @@ function Projets() {
       <h2>Projets</h2>
 
       <div className="project-container card text-center col-12 col-sm-10 col-lg-8">
-        <div className="card-header">
+        {/* <div className="card-header">
           <ul className="nav nav-tabs card-header-tabs">
             <li className="nav-item">
               <a className="nav-link active" aria-current="true" href="#">Tous</a>
@@ -23,7 +23,7 @@ function Projets() {
               <a className="nav-link" href="#">React</a>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         <div className="project-container-body card-body">
           {
