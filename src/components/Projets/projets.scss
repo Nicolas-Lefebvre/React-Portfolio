@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .projets {
   display: flex;
   justify-content: center;
@@ -9,6 +11,9 @@
     // height: fit-content;
     height: 770px;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .project-container-body {
       display: flex;
@@ -22,6 +27,13 @@
     height: 340px;
     width: 265px !important;
     margin: 1rem 1rem;
+    cursor: pointer;
+
+    &:hover {
+      // zoom: 1.1;
+      transform: scale(1.1);
+      transition: all .5s;
+    }
 
     img {
       height: 100%;
@@ -29,9 +41,24 @@
     }
   }
 
+  button {
+    background-color: vars.$mainColor;
+    // border: none;
+    border-color: vars.$mainColor;;
+    border-radius: 5px;
+    padding: .2rem .5rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
   .project-detail {
-    min-height: 100% !important;
+    min-height: 80% !important;
     min-width:770px !important;
+
+    img {
+      height: 100%;
+      min-width:100%;
+    }
   }
 
   

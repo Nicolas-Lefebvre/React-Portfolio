@@ -3,15 +3,27 @@
 // == Import
 
 // == Composant
-function ProjectDetail({ image, name, description }) {
+function ProjectDetail({
+  image, name, description, setProjectLayout,
+}) {
   return (
-    <div className="project-detail card" style={{ width: '18rem' }}>
-      <img src={image} className="card-img-top" alt="..." />
-      <div className="card-body">
-        <h4>NOM PROJET: {name}</h4>
-        <p className="card-text">{description}</p>
+    <>
+      <button
+        type="button"
+        onClick={() => {
+          console.log('Clic sur retour');
+          setProjectLayout('all');
+        }}
+      >Retour
+      </button>
+      <div className="project-detail card" style={{ width: '18rem' }}>
+        <img src={image} className="card-img-top" alt="..." />
+        <div className="card-body">
+          <h4>NOM PROJET: {name}</h4>
+          <p className="card-text">{description}</p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

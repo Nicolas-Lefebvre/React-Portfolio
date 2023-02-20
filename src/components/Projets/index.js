@@ -39,6 +39,7 @@ function Projets({
                   ProjectList.map((project, index) => (
 
                     <Project
+                      key={project.id}
                       image={project.image}
                       onClick={() => {
                         console.log('Clic sur projet');
@@ -53,6 +54,7 @@ function Projets({
             )
             : (
               <ProjectDetail
+                setProjectLayout={setProjectLayout}
                 image={highlithedProject.image}
                 name={highlithedProject.name}
                 description={highlithedProject.description}
