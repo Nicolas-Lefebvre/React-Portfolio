@@ -8,11 +8,12 @@
   margin: 2rem auto;
 
   .project-container {
-    // height: fit-content;
-    height: 770px;
+    height: fit-content;
+    // height: 770px;
+    // width: 80%;
     border: none;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     .project-container-body {
@@ -53,12 +54,32 @@
 
   .project-detail {
     min-height: 80% !important;
-    min-width:770px !important;
+    width: 90%;
+    // min-width:770px !important;
+    display: flex;
+    border: none;
+    
 
     img {
       height: 100%;
       min-width:100%;
+      border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     }
+
+    h4 {
+      font-weight: bold;
+      margin: 1rem auto;
+      font-size: 1.4rem;
+    }
+  }
+
+  @media (min-width: 800px) {
+    // .project-detail {
+    //   flex-direction: row;
+    //   justify-content: center;
+    // }
   }
 
   

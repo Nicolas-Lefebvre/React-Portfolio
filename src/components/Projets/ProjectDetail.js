@@ -16,10 +16,13 @@ function ProjectDetail({
         }}
       >Retour
       </button>
-      <div className="project-detail card" style={{ width: '18rem' }}>
+      <div
+        className="project-detail card"
+        // style={{ width: '18rem' }}
+      >
         <img src={image} className="card-img-top" alt="..." />
         <div className="card-body">
-          <h4>NOM PROJET: {name}</h4>
+          <h4>{name}</h4>
           <p className="card-text">{description}</p>
         </div>
       </div>
