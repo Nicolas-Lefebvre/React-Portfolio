@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 // == Import
 import './projets.scss';
+
 import ProjectList from '../../Data/ProjectList';
 import Project from './Project';
 import ProjectDetail from './ProjectDetail';
@@ -57,6 +58,7 @@ function Projets({
                 setProjectLayout={setProjectLayout}
                 image={highlithedProject.image}
                 name={highlithedProject.name}
+                link={highlithedProject.link}
                 description={highlithedProject.description}
               />
             )

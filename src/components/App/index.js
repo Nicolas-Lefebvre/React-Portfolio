@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import Header from '../Header';
 import Navbar from '../Navbar';
 import Projets from '../Projets';
+import Contact from '../Contact';
 
 // import ProjectList from '../../Data/ProjectList';
 
@@ -53,9 +54,7 @@ function App() {
         highlithedProject={highlithedProject}
         setHighlithedProject={setHighlithedProject}
       />
-      <div>Projets</div>
-      <div>Presentation / contact</div>
-      <h1>Composant : App</h1>
+      <Contact />
     </div>
   );
 }

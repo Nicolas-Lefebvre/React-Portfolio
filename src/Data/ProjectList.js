@@ -12,6 +12,7 @@ export default
     description: "Site réalisé avec Symfony et React permettant aux utilisateur d'enregistrer leurs parties de jeux de sociétés afin de faire remonter de nombreuses statistiques.",
     category: ['React', 'Application'],
     image: imageBGS,
+    // link: 'https://boardgamescores.fr',
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ export default
     description: "Site E-commerce de vente de vêtements et accessoires, réalisé avec wordpress.",
     category: ['Wordpress', 'Site E-commerce'],
     image: imageFF,
+    link: 'https://frenchy-funky.fr',
   },
   {
     id: 3,
@@ -26,6 +28,7 @@ export default
     description: "Site vitrine mettant en avant l'entreprise ainsi que toute son offre traiteur",
     category: ['Wordpress', 'Site vitrine'],
     image: imageNP,
+    link: 'https://nolia-paris.fr',
   },
   {
     id: 4,
@@ -33,5 +36,6 @@ export default
     description: "Site dans le genre du célèbre Trip Advisor. Le but de ce projet est de s'entrainer à construire un site en utilisant PHP pour afficher dynamiquement son contenu, et Javascript afin de gérer les thèmes (dark mode ...) ainsi que les systèmes de filtrage du contenu. ",
     category: ['PHP', 'Site vitrine'],
     image: imageTO,
+    // link: 'https://boardgamescores.fr',
   },
 ];
