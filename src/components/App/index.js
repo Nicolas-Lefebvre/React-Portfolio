@@ -7,6 +7,7 @@ import Header from '../Header';
 import Navbar from '../Navbar';
 import Projets from '../Projets';
 import Contact from '../Contact';
+import About from '../About';
 
 // import ProjectList from '../../Data/ProjectList';
 
@@ -54,6 +55,7 @@ function App() {
         highlithedProject={highlithedProject}
         setHighlithedProject={setHighlithedProject}
       />
+      <About />
       <Contact />
     </div>
   );

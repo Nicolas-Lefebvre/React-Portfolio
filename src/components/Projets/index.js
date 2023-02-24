@@ -1,10 +1,28 @@
 /* eslint-disable max-len */
 // == Import
 import './projets.scss';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+// import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
 import ProjectList from '../../Data/ProjectList';
 import Project from './Project';
 import ProjectDetail from './ProjectDetail';
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '90vw',
+  height: '90vh',
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 // == Composant
 function Projets({
@@ -13,6 +31,10 @@ function Projets({
   highlithedProject,
   setHighlithedProject,
 }) {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <section className="projets">
 
@@ -45,7 +67,8 @@ function Projets({
                       onClick={() => {
                         console.log('Clic sur projet');
                         setHighlithedProject(ProjectList[index]);
-                        setProjectLayout('detailed');
+                        // setProjectLayout('detailed');
+                        handleOpen();
                       }}
                     />
 
@@ -63,6 +86,46 @@ function Projets({
               />
             )
         }
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography
+              id="modal-modal-title"
+              variant="h5"
+              component="h2"
+              style={{
+                textAlign: 'center',
+              }}
+            >
+              {highlithedProject.name}
+            </Typography>
+            <Typography
+              id="modal-modal-description"
+              sx={{ mt: 2 }}
+              style={{
+                height: '90%',
+              }}
+            >
+              <span>{highlithedProject.description}</span><br />
+              <a href="" style={{ margin: 'auto' }}>Voir le site</a>
+              <img
+                src={highlithedProject.image}
+                // className="card-img-top"
+                alt="Page d'accueil du site"
+                style={{
+                  // overflo : 'scroll',
+                  marginTop: '2rem',
+                  maxHeight: '80%',
+                  maxWidth: '90%',
+                }}
+              />
+            </Typography>
+          </Box>
+        </Modal>
 
       </div>
 
