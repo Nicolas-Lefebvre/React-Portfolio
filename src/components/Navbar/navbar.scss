@@ -12,7 +12,7 @@ nav a {
 }
 
 .sticky-top-navbar {
-  z-index: 10000;
+  z-index: 999;
   position: fixed !important;
   top: 0px;
   width: 100%;
@@ -26,4 +26,8 @@ nav a {
     justify-content: space-around;
     margin-left: -8rem;
   }
+}
+
+.overlayed {
+  background-color: #43688600!important;
 }
