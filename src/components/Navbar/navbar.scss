@@ -22,12 +22,39 @@ nav a {
   justify-content: center;
 
   ul {
-    width: 70%;
+    width: 100%;
     justify-content: space-around;
-    margin-left: -8rem;
+    // margin-left: -8rem;
+
+    li {
+      width: 100%;
+    }
+
+    a {
+      width: 100%;
+      margin: auto;
+    }
   }
 }
 
 .overlayed {
   background-color: #43688600!important;
+}
+
+@media (min-width: 993px) {
+  ul {
+    width: 70% !important;
+    margin-left: -8rem !important;
+
+    li {
+      // width: 80%;
+      
+      a {
+        &:hover {
+          scale: 1.05;
+          // text-decoration: underline;
+        }
+      }
+    }
+  }
 }
