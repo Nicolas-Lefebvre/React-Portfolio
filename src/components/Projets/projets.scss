@@ -36,7 +36,7 @@
     &:hover {
       // zoom: 1.1;
       transform: scale(1.1);
-      transition: all .5s;
+      transition: all 1s;
     }
 
     .card-img-top {
@@ -129,6 +129,17 @@
   align-items: center;
   z-index: 1000;
   
+  animation-name: grow-box;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+
+  @keyframes grow-box {
+    0% { scale: 0; }
+    // 25% { scale: .25; }
+    // 50% { scale: .5; }
+    100% { scale: 1; }
+  }
+  
 }
 
 .Modal-content {
@@ -140,16 +151,25 @@
   overflow-y: auto;
   text-align: center;
   border-radius: 6px;
+  
+  .link {
+    margin-top: 1rem;
+    color: blue;
+  }
 }
 
 .Modal-title {
-  font-size: 24px;
-  margin-top: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
 }
 
 .Modal-paragraph {
   font-size: 16px;
   margin-top: 0;
+  margin-bottom: 2rem;
+  line-height: 1.5rem;
+
 }
 
 .Modal-image {

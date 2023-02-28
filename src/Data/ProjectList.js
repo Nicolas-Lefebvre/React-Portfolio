@@ -9,7 +9,7 @@ export default
   {
     id: 1,
     name: 'Board Game Score',
-    description: "Site réalisé avec Symfony et React permettant aux utilisateur d'enregistrer leurs parties de jeux de sociétés afin de faire remonter de nombreuses statistiques.",
+    description: "Site réalisé avec Symfony et React permettant aux utilisateur d'enregistrer leurs parties de jeux de société afin de faire remonter de nombreuses statistiques. Mise en ligne prévue prochainement.",
     category: ['React', 'Application'],
     image: imageBGS,
     // link: 'https://boardgamescores.fr',
@@ -25,7 +25,7 @@ export default
   {
     id: 3,
     name: 'Nolia Paris',
-    description: "Site vitrine mettant en avant l'entreprise ainsi que toute son offre traiteur",
+    description: "Site vitrine réalisé avec Wordpress, mettant en avant l'entreprise ainsi que toute son offre traiteur afin de favoriser les prises de contact et les demandes de devis directement en ligne.",
     category: ['Wordpress', 'Site vitrine'],
     image: imageNP,
     link: 'https://nolia-paris.fr',

@@ -10,13 +10,17 @@
 
   img {
     width: 80%;
-    margin: auto;
+    margin: 2.2rem auto;
   }
 
   p {
     margin-top: 2rem;
-    line-height: 1.4rem;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5rem;
     font-size: 1rem;
+    text-align:center;
+    // width: 100px;
   }
 }
 

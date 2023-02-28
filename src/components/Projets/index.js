@@ -91,6 +91,7 @@ function Projets({
           }
         </div>
 
+        {/* ---------------------------------------- PROJECT MODAL ------------------------------------------- */}
         {isOpen && (
         <div className="overlay" onClick={closeModal} style={{ width: '100vw', height: '100vh' }}>
           <div className="Modal" id="Modal">
@@ -98,6 +99,9 @@ function Projets({
             <div className="Modal-content">
               <h2 className="Modal-title">{highlithedProject.name}</h2>
               <p className="Modal-paragraph">{highlithedProject.description}</p>
+              { highlithedProject.link && (
+              <p className="link"><a href={highlithedProject.link} rel="noreferrer" target="_blank">Voir le site</a></p>
+              )}
               <img className="Modal-image" src={highlithedProject.image} alt={highlithedProject.name} />
             </div>
           </div>
