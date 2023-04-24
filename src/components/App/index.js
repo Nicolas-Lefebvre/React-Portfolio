@@ -8,6 +8,7 @@ import Navbar from '../Navbar';
 import Projets from '../Projets';
 import Contact from '../Contact';
 import About from '../About';
+import Footer from '../Footer';
 
 // import ProjectList from '../../Data/ProjectList';
 
@@ -57,6 +58,7 @@ function App() {
       />
       <About />
       <Contact />
+      <Footer />
     </div>
   );
 }
