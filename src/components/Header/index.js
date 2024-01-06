@@ -1,6 +1,6 @@
 // == Import
 import './header.scss';
-import logo from '../../assets/images/nicolas-lefebvre-developpeur-logo.png';
+import logo from '../../assets/images/logo-nicolas-lefebvre-nldev.png';
 
 // == Composant
 function Header() {
@@ -9,9 +9,9 @@ function Header() {
 
       <div className="header-wrapper" id="home">
         <div className="title-wrapper">
-          <img src={logo} alt="logo Nicolas Lefebvre Développeur Web" />
+          <img src={logo} alt="logo Nicolas Lefebvre nl-dev creation de sites web" />
           <h1>Nicolas Lefebvre</h1>
-          <p>Développeur Web</p>
+          <p>Création de sites web</p>
 
           {/* -------------------------------------BOUTON HEADER-------------------------------- */}
           <div>
