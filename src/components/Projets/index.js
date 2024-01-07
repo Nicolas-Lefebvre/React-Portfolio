@@ -2,7 +2,7 @@
 import './projets.scss';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ProjectList from '../../Data/ProjectList';
+// import ProjectList from '../../Data/ProjectList';
 import Project from './Project';
 import ProjectDetail from './ProjectDetail';
 
@@ -82,12 +82,12 @@ function Projets({
               ? (
                 <div className="project-container-body card-body">
                   {
-                    ProjectList.map((project, index) => (
+                    projects.map((project, index) => (
                       <Project
                         key={project.id}
-                        image={project.image}
+                        image={project.mediaUrl}
                         onClick={() => {
-                          setHighlithedProject(ProjectList[index]);
+                          setHighlithedProject(projects[index]);
                           openModal();
                           const navbar = document.getElementById('navbar');
                           navbar.classList.add('overlayed');
@@ -100,10 +100,10 @@ function Projets({
               : (
                 <ProjectDetail
                   setProjectLayout={setProjectLayout}
-                  image={highlithedProject.image}
-                  name={highlithedProject.name}
-                  link={highlithedProject.link}
-                  description={highlithedProject.description}
+                  image={highlithedProject.mediaUrl}
+                  name={highlithedProject.title.rendered}
+                  link={highlithedProject.lien_site}
+                  description={highlithedProject.content.rendered}
                 />
               )
           }
@@ -114,15 +114,15 @@ function Projets({
             <div className="Modal" id="Modal">
               <div className="Modal-overlay" onClick={closeModal} />
               <div className="Modal-content">
-                <h2 className="Modal-title">{highlithedProject.name}</h2>
-                <p className="Modal-paragraph">{highlithedProject.description}</p>
+                <h2 className="Modal-title">{highlithedProject.title.rendered}</h2>
+                <p className="Modal-paragraph">{highlithedProject.content.rendered}</p>
                 {highlithedProject.link && (
                   <p className="link">
-                    <a href={highlithedProject.link} rel="noreferrer" target="_blank">Voir le site</a>
+                    <a href={highlithedProject.lien_site} rel="noreferrer" target="_blank">Voir le site</a>
                   </p>
                 )}
-                <img className="Modal-image" src={highlithedProject.image} alt={highlithedProject.name} />
-              </div>
+                <img className="Modal-image" src={highlithedProject.mediaUrl} alt={highlithedProject.title.renderered} />
+                </div>
             </div>
           </div>
         )}
