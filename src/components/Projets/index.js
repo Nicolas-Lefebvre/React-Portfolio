@@ -102,8 +102,8 @@ function Projets({
                   setProjectLayout={setProjectLayout}
                   image={highlithedProject.mediaUrl}
                   name={highlithedProject.title.rendered}
-                  link={highlithedProject.lien_site}
-                  description={highlithedProject.content.rendered}
+                  link={highlithedProject.acf.lien_site}
+                  description={highlithedProject.acf.descriptif_court}
                 />
               )
           }
@@ -115,10 +115,10 @@ function Projets({
               <div className="Modal-overlay" onClick={closeModal} />
               <div className="Modal-content">
                 <h2 className="Modal-title">{highlithedProject.title.rendered}</h2>
-                <p className="Modal-paragraph">{highlithedProject.content.rendered}</p>
+                <p className="Modal-paragraph">{highlithedProject.acf.descriptif_court}</p>
                 {highlithedProject.link && (
                   <p className="link">
-                    <a href={highlithedProject.lien_site} rel="noreferrer" target="_blank">Voir le site</a>
+                    <a href={highlithedProject.acf.lien_site} rel="noreferrer" target="_blank">Voir le site</a>
                   </p>
                 )}
                 <img className="Modal-image" src={highlithedProject.mediaUrl} alt={highlithedProject.title.renderered} />
