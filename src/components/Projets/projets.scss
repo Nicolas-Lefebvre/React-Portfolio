@@ -41,6 +41,8 @@
 
     .card-img-top {
       border: none !important;
+      object-fit: cover;
+      object-position: top;
     }
 
     img {
