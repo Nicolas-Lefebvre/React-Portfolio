@@ -1,8 +1,8 @@
-// Importations
+// Importations des ressources nécessaires
 import './projets.scss';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-// import ProjectList from '../../Data/ProjectList';
+import ProjectList from '../../Data/ProjectList';
 import Project from './Project';
 import ProjectDetail from './ProjectDetail';
 
@@ -14,45 +14,52 @@ function Projets({
   setHighlithedProject,
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [projectList, setProjectList] = useState([]);
+  const [projects, setProjects] = useState([]); // Renommé de 'posts' en 'projects'
 
-  // Fonction pour récupérer les médias des posts
-  const fetchPostMedia = async (mediaId) => {
+  // Fonction pour récupérer les médias associés à un projet
+  const fetchProjectMedia = async (mediaId) => {
     try {
       const response = await axios.get(`https://nl-dev.fr/wp-json/wp/v2/media/${mediaId}`);
-      return response.data.source_url; // URL de l'image
+      // console.log(response.data);
+      return response.data.source_url; // Récupère l'URL de l'image
     } catch (error) {
       console.error('Erreur lors de la récupération du média:', error);
       return null;
     }
   };
 
-  // Fonction pour charger les posts
+  // Fonction pour charger les projets depuis l'API
   const fetchProjects = async () => {
-
-    // Récupération les projets
-    axios.get('https://nl-dev.fr/wp-json/wp/v2/posts')
-
-        .then((response) => {
-          console.log(response.data);
-          setProjectList(response.data);
-        })
-
-        .catch((error) => {
-          console.log(error);
-        })
-
-        .finally(() => { 
-          return projectList;
-        });
+    try {
+      const response = await axios.get('https://nl-dev.fr/wp-json/wp/v2/posts');
+      const fetchedProjects = response.data;
+  
+      // Récupère les images pour chaque projet
+      const projectsWithMedia = await Promise.all(fetchedProjects.map(async project => {
+        const mediaUrl = project.featured_media ? await fetchProjectMedia(project.featured_media) : null;
+        // console.log({ ...project, mediaUrl});
+        // Insère l'url des images dans les projets
+        return { ...project, mediaUrl };
+      }));
+      console.log(projectsWithMedia);
+      return projectsWithMedia;
+    } catch (error) {
+      console.error('Erreur lors de la récupération des projets:', error);
+      return [];
+    }
   };
 
-  // Effet pour charger les posts au montage du composant
+  // Effet pour charger les projets au montage du composant
   useEffect(() => {
-    fetchProjects()
+    const loadProjects = async () => {
+      const fetchedProjects = await fetchProjects();
+      setProjects(fetchedProjects); // Met à jour l'état avec les projets chargés
+    };
+
+    loadProjects();
   }, []);
 
-  // Gestion de l'ouverture et de la fermeture du modal
+  // Gère l'ouverture et la fermeture du modal
   const openModal = () => setIsOpen(true);
   const closeModal = (event) => {
     const modal = document.getElementById('Modal');
@@ -75,12 +82,12 @@ function Projets({
               ? (
                 <div className="project-container-body card-body">
                   {
-                    projectList.map((project, index) => (
+                    ProjectList.map((project, index) => (
                       <Project
                         key={project.id}
                         image={project.image}
                         onClick={() => {
-                          setHighlithedProject(projectList[index]);
+                          setHighlithedProject(ProjectList[index]);
                           openModal();
                           const navbar = document.getElementById('navbar');
                           navbar.classList.add('overlayed');
