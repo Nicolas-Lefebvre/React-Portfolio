@@ -152,9 +152,20 @@
   text-align: center;
   border-radius: 6px;
   
-  .link {
+  .link-to-project-site {
     margin-top: 1rem;
-    color: blue;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    margin: 0 auto;
+    padding: 6px 12px;
+    font-size: .9rem;
+  }
+
+  .link-to-project-site:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
   }
 }
 

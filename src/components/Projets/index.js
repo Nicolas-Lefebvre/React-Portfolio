@@ -118,7 +118,7 @@ function Projets({
                 <p className="Modal-paragraph">{highlithedProject.acf.descriptif_court}</p>
                 {highlithedProject.link && (
                   <p className="link">
-                    <a href={highlithedProject.acf.lien_site} rel="noreferrer" target="_blank">Voir le site</a>
+                    <button className="link-to-project-site" href={highlithedProject.acf.lien_site} rel="noreferrer" target="_blank">Voir le site</button>
                   </p>
                 )}
                 <img className="Modal-image" src={highlithedProject.mediaUrl} alt={highlithedProject.title.renderered} />
